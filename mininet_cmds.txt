@@ -1,0 +1,30 @@
+Launch mininet custom topology :
+    sudo mn --custom mininet/custom/dctopo.py --topo=mytopo --controller=remote --mac
+
+Start controller :
+    ./pox.py forwarding.firewall openflow.discovery --eat-early-packets openflow.spanning_tree --no-flood --hold-down
+
+Display Nodes :
+    nodes
+
+Display Links :
+    links
+
+Dump Node Info :
+    dump
+
+Get Node Info :
+    s1 ifconfig -a
+
+Test Connectivity :
+    h1 ping -c 1 h2
+
+Ping All Nodes :
+    pingall
+
+Run Web Server :
+    h1 python -m SimpleHTTPServer 80 &
+    h1 kill %python
+
+Dump Switch Flows:
+	c1 dpctl dump-flows tcp:127.0.0.1:6634
